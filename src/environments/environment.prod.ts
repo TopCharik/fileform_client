@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "fileformapi.azurewebsites.net"
+  apiUrl: "https://fileformapi.azurewebsites.net"
 };
