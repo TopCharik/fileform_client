@@ -18,9 +18,7 @@ export class DocxFormComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-    this.formService.testHttpGet();
-  }
+  ngOnInit(): void { }
 
   fileForm: FormGroup = new FormGroup({
     email: new FormControl<string>('', [Validators.required, Validators.email]),
