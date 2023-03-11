@@ -6,7 +6,7 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class DocxFileFormService {
-  private apiUrl = environment.apiUrl;
+  private apiUrl = "https://fileformapi.azurewebsites.net";
 
   constructor(private http: HttpClient) { }
 
