@@ -6,6 +6,15 @@
   border: black solid 4px;
   padding: 0 3rem 3rem 3rem;
 }
+
+.form-box.disabled ,
+.form-box.disabled,
+.disabled
+{
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .form-header {
   text-align: center;
 }

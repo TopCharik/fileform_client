@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://fileformapi.azurewebsites.net"
+  apiUrl: "http://localhost:5031"
 };
 
 /*

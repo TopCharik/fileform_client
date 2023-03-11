@@ -13,6 +13,7 @@ import {ApiError} from "../models/apiError";
 export class DocxFormComponent implements OnInit {
   error?: ApiError;
   filenameValid = true;
+  disabled = false;
 
   constructor(private router: Router, private formService: DocxFileFormService) {
   }
@@ -31,13 +32,17 @@ export class DocxFormComponent implements OnInit {
     const formData = new FormData();
     formData.append('email', this.fileForm.get('email')?.value);
     formData.append('file', this.fileForm.get('fileSource')?.value);
-    this.formService.submitDocxForm(formData).subscribe({
+    this.disabled = true;
+    this.formService.submitDocxForm(formData)
+      .subscribe({
       next: () => {
+        this.disabled = false;
         this.router.navigate(["/docx-form-success"]);
       },
       error: (err: HttpErrorResponse) => {
-        console.log(err);
         this.error = err.error;
+        this.disabled = false;
+        setTimeout( () => this.error = undefined, 10000);
       },
     });
   }

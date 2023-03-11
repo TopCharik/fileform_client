@@ -1,4 +1,4 @@
-<div class="form-box" [formGroup]="fileForm">
+<div class="form-box" [formGroup]="fileForm" [ngClass]="{'disabled': disabled}">
   <h2 class="form-header">.docx form</h2>
   <form>
     <div class="form-input-box">
@@ -27,7 +27,7 @@
     <button
       (click)="onSubmit()"
       class="btn btn-primary center submit-button"
-      [disabled]="fileForm.invalid"
+      [disabled]="fileForm.invalid || disabled"
     >
       Send form
     </button>
