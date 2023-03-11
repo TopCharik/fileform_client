@@ -6,17 +6,11 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class DocxFileFormService {
-  private apiUrl = "https://fileformapi.azurewebsites.net";
+  private apiUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 
   submitDocxForm(formData: FormData){
     return this.http.post(this.apiUrl + "/docx", formData);
-  }
-
-  testHttpGet() {
-    this.http.get(this.apiUrl + "/test").subscribe({
-      next: (msg) => console.log(msg),
-    })
   }
 }
