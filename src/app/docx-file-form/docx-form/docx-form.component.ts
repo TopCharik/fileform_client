@@ -19,6 +19,7 @@ export class DocxFormComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.formService.testHttpGet();
   }
 
   fileForm: FormGroup = new FormGroup({

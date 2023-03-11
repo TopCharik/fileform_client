@@ -13,4 +13,10 @@ export class DocxFileFormService {
   submitDocxForm(formData: FormData){
     return this.http.post(this.apiUrl + "/docx", formData);
   }
+
+  testHttpGet() {
+    this.http.get(this.apiUrl + "/test").subscribe({
+      next: (msg) => console.log(msg),
+    })
+  }
 }
