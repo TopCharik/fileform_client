@@ -37,11 +37,13 @@ export class DocxFormComponent implements OnInit {
       .subscribe({
       next: () => {
         this.disabled = false;
+        localStorage.setItem("canActivateSuccess", "true");
         this.router.navigate(["/docx-form-success"]);
       },
       error: (err: HttpErrorResponse) => {
         this.error = err.error;
         this.disabled = false;
+        this.router.navigate(["/docx-form-success"]);
         setTimeout( () => this.error = undefined, 10000);
       },
     });
