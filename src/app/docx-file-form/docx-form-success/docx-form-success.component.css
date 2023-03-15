@@ -1,10 +1,9 @@
 .success-box {
-  max-width: 400px;
-  min-width: 400px;
+  max-width: 90vw;
+  width: 400px;
   margin: auto;
   background: #fff;
-  border: black solid 4px;
-  padding: 0 3rem 3rem 3rem;
+  outline: black solid 4px;
 }
 
 .success-header {

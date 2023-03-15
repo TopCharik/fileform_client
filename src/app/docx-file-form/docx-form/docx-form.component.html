@@ -3,7 +3,14 @@
   <form>
     <div class="form-input-box">
       <label for="email">Email: </label>
-      <input type="text" name="" id="email" class="form-input" formControlName="email">
+      <input
+        type="text"
+        name=""
+        id="email"
+        class="form-input"
+        formControlName="email"
+        [ngClass]="{'disabled': disabled}"
+      >
       <div class="errors"
            *ngIf="fileForm.controls['email'].invalid && (fileForm.controls['email'].dirty || fileForm.controls['email'].touched)"
       >
@@ -17,7 +24,14 @@
     </div>
     <div class="form-input-box">
       <label for="file">.docx file: </label>
-      <input type="file" id="file" class="form-input" formControlName="file" (change)="onFileChange($event)">
+      <input
+        type="file"
+        id="file"
+        class="form-input"
+        [ngClass]="{'disabled': disabled}"
+        formControlName="file"
+        (change)="onFileChange($event)"
+      >
       <div class="errors" *ngIf="!filenameValid">
         <div class="error-message">
           Only .docx files permitted.
