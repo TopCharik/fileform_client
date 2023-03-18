@@ -19,7 +19,9 @@ export class DocxFormComponent implements OnInit {
   }
 
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    localStorage.setItem("canActivateSuccess", "false");
+  }
 
   fileForm: FormGroup = new FormGroup({
     email: new FormControl<string>('', [Validators.required, Validators.email]),

@@ -9,7 +9,6 @@ export class FormSuccessGuardService implements CanActivate{
 
   canActivate(): boolean {
     const isSuccess = localStorage.getItem("canActivateSuccess");
-    localStorage.setItem("canActivateSuccess", "false");
     return isSuccess === "true";
   }
 }
